@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Agenda - The Black List{% endblock %}
+{% block content %}
+<h1>Bienvenido, {{ current_user.username }}</h1>
+<h2>Tu Agenda</h2>
+<ul>
+    {% for task in tasks %}
+    <li>{{ task.title }} - {{ task.description }}</li>
+    {% endfor %}
+</ul>
+<form method="POST" action="/add_task">
+    <input type="text" name="title" placeholder="Título de la tarea" required>
+    <input type="text" name="description" placeholder="Descripción" required>
+    <button type="submit">Añadir Tarea</button>
+</form>
+{% endblock %}

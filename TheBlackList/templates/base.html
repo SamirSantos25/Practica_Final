@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>{% block title %}The Black List{% endblock %}</title>
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+    <header>
+        <a href="/logout">Cerrar Sesión</a>
+    </header>
+    {% endif %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
